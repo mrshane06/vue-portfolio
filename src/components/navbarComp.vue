@@ -23,16 +23,16 @@
             <a href="#about">About</a>
           </li>
           <li>
-            <a href="/">Resume</a>
+            <a href="#resume">Resume</a>
           </li>
           <li>
-            <a href="/">Projects</a>
+            <a href="#">Projects</a>
           </li>
           <li>
-            <a href="/">Testimonials</a>
+            <a href="#">Testimonials</a>
           </li>
           <li>
-            <a href="/">Contacts</a>
+            <a href="#">Contacts</a>
           </li>
         </ul>
       </div>

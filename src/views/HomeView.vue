@@ -1,6 +1,6 @@
 <template>
     <navbar-comp>
-      <router-view/>
+      <!-- <router-view/> -->
     </navbar-comp>
     <section id="home">
       <div id="links">
@@ -9,7 +9,7 @@
       </div>
     <div class="row">
       <div class="col-md-2 col-sm-12">
-        <img src="https://mrshane06.github.io/vue-portfolio-images/logos/Point_Inverse-color.png" id="inverse">
+        <img src="https://mrshane06.github.io/vue-portfolio-images/logos/Left.png" id="inverse">
       </div>
       <div  class="col-md-8 col-sm-12">
         <img src="https://mrshane06.github.io/vue-portfolio-images/logos/Logo4.png" id="Logo">
@@ -27,20 +27,79 @@
         <hr>
     </section>
 
-    <!-- <section id="about">
-      <h1><em>About Me</em></h1>
-      <div>
+    <section id="about">
+        <h1 class="aboutHead"><em>About Me</em></h1>
+        <hr>
+        <section id="colorAbout" v-for="about in aboutData()" :key="about">
+          <div class="row">    
+            <div class="col-md-3 col-sm-12">
+              <about-comp>
+                  <template #about>
+                    <img :src='about.me' id="me">
+                  </template>
+              </about-comp>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <about-comp>
+                  <template #about>
+                    <h4 class="aboutText">{{about.about}}</h4>
+                  </template>
+              </about-comp>
+            </div>
+            <div class="col-md-3 col-sm-12">
+              <img src="https://mrshane06.github.io/vue-portfolio-images/logos/right.png" id="pic1">
+            </div>
+          </div>
+        </section>
+     </section>
 
-      </div>
-    </section> -->
+     <!-- <section id="resume">
+      <h1 class="resumeHead"><em>My Resume</em></h1>
+      <br>
+      <h2>Education:</h2>
+      <section id="colorAbout" v-for="education in educationData()" :key="education">
+        <education-comp>
+          <template #education>
+            <h4>{{education.education}}</h4>
+          </template>
+          <template #years>
+            <h4>{{education.years}}</h4>
+          </template>
+          <template #image>
+            <img :src='education.img' class="eduImg">
+          </template>
+        </education-comp>
+      </section>
+      <br>
+     </section> -->
 
 </template>
 <script>
+import aboutComp from '@/components/aboutComp.vue'
 import navbarComp from "../components/navbarComp.vue"
+// import educationComp from "../components/educationComp.vue"
 export default {
   components:{
-    navbarComp
-  }
+    navbarComp,
+    aboutComp,
+    // educationComp
+  },
+  methods:{
+        aboutData(){
+            return this.$store.state.about
+        },
+        educationData(){
+            return this.$store.state.education
+        },
+    },
+    computed:{
+        getData(){
+            return this.$store.dispatch ('getData')
+        }
+    },
+    mounted(){
+        this.getData
+    }
 }
 </script>
 <style scoped>
@@ -109,7 +168,43 @@ export default {
 }
 
 /* about section */
+.aboutHead{
+  padding: 30px;
+  background-color:#9dc775;
+}
 
+hr{
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#colorAbout{
+  background-color:#9dc775;
+}
+
+.aboutText{
+  margin-top: 80px;
+  border: 2px solid black;
+  border-radius: 50px;
+  margin-left: 30px;
+  background-color: #2c3e50;
+  color: #b3cf99;
+  padding: 30px;
+}
+
+#me{
+  margin-top:40px;
+  margin-bottom:20px;
+  width: 250px;
+  height:300px
+}
+
+#pic1{
+  margin-top:40px;
+  margin-bottom:20px;
+  height: 300px;
+  width: 250px;
+}
 /* resume section */
 
 /* projects section */
