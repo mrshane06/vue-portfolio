@@ -53,36 +53,53 @@
         </section>
      </section>
 
-     <!-- <section id="resume">
+     <section id="resume">
       <h1 class="resumeHead"><em>My Resume</em></h1>
       <br>
       <h2>Education:</h2>
-      <section id="colorAbout" v-for="education in educationData()" :key="education">
+      <section v-for="education in educationData()" :key="education">
         <education-comp>
           <template #education>
             <h4>{{education.education}}</h4>
           </template>
+          <template #image>
+            <img :src='education.image' class="eduImg">
+          </template>
           <template #years>
             <h4>{{education.years}}</h4>
-          </template>
-          <template #image>
-            <img :src='education.img' class="eduImg">
           </template>
         </education-comp>
       </section>
       <br>
-     </section> -->
+
+      <!-- <h2>My Skills</h2>
+      <section v-for="skills in skillsData()" :key="skills">
+        <skills-comp>
+          <template #skill>
+            <h4>{{skills.skill}}</h4>
+          </template>
+          <template #level>
+            <h6>{{skills.level}}</h6>
+          </template>
+          <template #img>
+            <img :src='skills.img' class="eduImg">
+          </template>
+        </skills-comp>
+      </section> -->
+     </section> 
 
 </template>
 <script>
 import aboutComp from '@/components/aboutComp.vue'
 import navbarComp from "../components/navbarComp.vue"
-// import educationComp from "../components/educationComp.vue"
+import educationComp from "../components/educationComp.vue"
+// import skillsComp from "../components/skillsComp.vue"
 export default {
   components:{
     navbarComp,
     aboutComp,
-    // educationComp
+    educationComp,
+    // skillsComp,
   },
   methods:{
         aboutData(){
@@ -91,6 +108,9 @@ export default {
         educationData(){
             return this.$store.state.education
         },
+        // skillsData(){
+        //     return this.$store.state.skills
+        // },
     },
     computed:{
         getData(){
@@ -207,6 +227,10 @@ hr{
 }
 /* resume section */
 
+.eduImg{
+  width: 100px;
+  height: 100px;
+}
 /* projects section */
 
 /* testimonials section */

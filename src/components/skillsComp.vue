@@ -1,6 +1,6 @@
 <template>
     <div>
-        <slot name="skill"></slot>
+        <slot name="skills"></slot>
         <slot name="level"></slot>
         <slot name="img"></slot>
     </div>
