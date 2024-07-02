@@ -1,38 +1,53 @@
 <template>
-  <div>
     <navbar-comp>
       <router-view></router-view>
     </navbar-comp>
-  </div>
 </template>
 
 <script>
-import navbarComp from "./components/navbarComp.vue"
+
 export default{
-  components:{
-    navbarComp
-  }
+
 }
 </script>
 <style>
+body{
+  background-color: #b3cf99;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #2c3e50;
+  text-align: center;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
 }
 
+/* navbar settings */
 nav {
-  padding: 30px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #CEDECD;
+  box-shadow: #9bc07b 7px 7px 7px;
 }
 
-nav a {
-  font-weight: bold;
+li {
+  padding: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+li a {
   color: #2c3e50;
+  font-weight: bold;
 }
 
-nav a.router-link-exact-active {
+li a:hover{
+  transition: 2s ;
   color: #42b983;
+  padding: 5px;
+  background-color: #d1d6d4;
 }
 </style>
