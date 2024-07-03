@@ -57,35 +57,56 @@
       <h1 class="resumeHead"><em>My Resume</em></h1>
       <br>
       <h2>Education:</h2>
-      <section v-for="education in educationData()" :key="education">
-        <education-comp>
-          <template #education>
-            <h4>{{education.education}}</h4>
-          </template>
-          <template #image>
-            <img :src='education.image' class="eduImg">
-          </template>
-          <template #years>
-            <h4>{{education.years}}</h4>
-          </template>
-        </education-comp>
-      </section>
+      <div class="row">
+        <div class="col-md-2 col-sm-12">
+          <img src="https://mrshane06.github.io/vue-portfolio-images/logos/pic3-removebg-preview.png" id="pic3">
+        </div>
+        <div  class="col-md-8 col-sm-12">
+          <section class="edu" v-for="education in educationData()" :key="education">
+            <education-comp>
+              <template #education>
+               <h4>{{education.education}}</h4>
+              </template>
+              <br>
+              <template #image>
+                <img :src='education.image' class="eduImg">
+              </template>
+              <br>
+              <template #years>
+                <h4>{{education.years}}</h4>
+              </template>
+            </education-comp>
+          </section>
+        </div>
+      </div>
       <br>
 
-      <!-- <h2>My Skills</h2>
+      <h2 class="mySkl">My Skills</h2>
+      <div class="skill" >
       <section v-for="skills in skillsData()" :key="skills">
-        <skills-comp>
-          <template #skill>
+            <skills-comp>
+          <!-- <template #skill>
             <h4>{{skills.skill}}</h4>
-          </template>
-          <template #level>
-            <h6>{{skills.level}}</h6>
           </template>
           <template #img>
             <img :src='skills.img' class="eduImg">
           </template>
+          <template #level>
+            <h6 class="skill-lvl">{{skills.level}}</h6>
+          </template> -->
+        <template #skill>
+          <div class="card" style="">
+            <img :src='skills.img' class="skill-img">
+            <hr>
+            <div class="card-body">
+              <h4 class="card-title">{{ skills.skill }}</h4>
+              <h6 class="card-text">{{ skills.level }}</h6>
+            </div>
+          </div>
+        </template>
         </skills-comp>
-      </section> -->
+      </section>
+      </div>
      </section> 
 
 </template>
@@ -93,13 +114,13 @@
 import aboutComp from '@/components/aboutComp.vue'
 import navbarComp from "../components/navbarComp.vue"
 import educationComp from "../components/educationComp.vue"
-// import skillsComp from "../components/skillsComp.vue"
+import skillsComp from "../components/skillsComp.vue"
 export default {
   components:{
     navbarComp,
     aboutComp,
     educationComp,
-    // skillsComp,
+    skillsComp,
   },
   methods:{
         aboutData(){
@@ -108,9 +129,9 @@ export default {
         educationData(){
             return this.$store.state.education
         },
-        // skillsData(){
-        //     return this.$store.state.skills
-        // },
+        skillsData(){
+            return this.$store.state.skills
+        },
     },
     computed:{
         getData(){
@@ -159,6 +180,7 @@ export default {
   margin: auto;
   margin-top:80px;
   animation: rotate 5s infinite ease;
+  place-items: center;
 }
 
 #links{
@@ -210,6 +232,7 @@ hr{
   background-color: #2c3e50;
   color: #b3cf99;
   padding: 30px;
+  place-items: center;
 }
 
 #me{
@@ -227,10 +250,58 @@ hr{
 }
 /* resume section */
 
+#resume{
+  padding: 30px;
+}
+
+#pic3{
+  height: 500px;
+  width: 400px;
+}
+
 .eduImg{
   width: 100px;
   height: 100px;
+  padding: 10px;
 }
+
+.skill{
+  display:grid;
+  grid-template-columns:repeat(4,1fr)
+}
+
+.mySkl{
+  margin-bottom: 50px;
+}
+
+.card-title{
+  padding: 10px;
+  width: 220px;
+  height: 50px;
+}
+
+.card-text{
+  padding-bottom: 20px;
+  width: 220px;
+  height: 50px;
+}
+
+.skill-img{
+  width: 223px;
+  height: 120px;
+  border-radius: 30px;
+}
+
+.card{
+  box-shadow: black 5px 5px 5px , -1px -1px 2px;
+  width: 14rem; 
+  border-radius: 30px;
+  margin-bottom: 50px;
+  margin-left: 60px;
+  display: flex;
+  justify-content: space-around;
+}
+
 /* projects section */
 
 /* testimonials section */
