@@ -84,16 +84,7 @@
       <h2 class="mySkl">My Skills</h2>
       <div class="skill" >
       <section v-for="skills in skillsData()" :key="skills">
-            <skills-comp>
-          <!-- <template #skill>
-            <h4>{{skills.skill}}</h4>
-          </template>
-          <template #img>
-            <img :src='skills.img' class="eduImg">
-          </template>
-          <template #level>
-            <h6 class="skill-lvl">{{skills.level}}</h6>
-          </template> -->
+      <skills-comp>
         <template #skill>
           <div class="card" style="">
             <img :src='skills.img' class="skill-img">
@@ -104,23 +95,45 @@
             </div>
           </div>
         </template>
-        </skills-comp>
+      </skills-comp>
       </section>
       </div>
      </section> 
 
+     <section id="project">
+      <h1 class="projectsHead"><em>My Projects</em></h1>
+      <hr>
+      <div class="projects">
+        <section class="colorProjects" v-for="projects in projectsData()" :key="projects">
+        <projects-comp>
+          <template #projects>
+            <div class="proj-card" style="width: 18rem;">
+              <img :src='projects.Pimage' class="project-image">
+              <div class="card-body">
+                <h4 class="project-title">{{ projects.Pname }}</h4>
+                <h6 class="project-text">{{ projects.description }}</h6>
+                <a :href="projects.github" class="project-btn1" target="_blank" >Github</a>   <a :href="projects.live" class="project-btn2" target="_blank" >Hosted</a>
+              </div>
+            </div>
+          </template>
+        </projects-comp>
+      </section>
+      </div>
+     </section>
 </template>
 <script>
 import aboutComp from '@/components/aboutComp.vue'
 import navbarComp from "../components/navbarComp.vue"
 import educationComp from "../components/educationComp.vue"
 import skillsComp from "../components/skillsComp.vue"
+import projectsComp from "../components/projectsComp.vue"
 export default {
   components:{
     navbarComp,
     aboutComp,
     educationComp,
     skillsComp,
+    projectsComp,
   },
   methods:{
         aboutData(){
@@ -131,6 +144,9 @@ export default {
         },
         skillsData(){
             return this.$store.state.skills
+        },
+        projectsData(){
+            return this.$store.state.projects
         },
     },
     computed:{
@@ -298,11 +314,65 @@ hr{
   border-radius: 30px;
   margin-bottom: 50px;
   margin-left: 60px;
-  display: flex;
-  justify-content: space-around;
 }
 
 /* projects section */
+
+.projectsHead{
+  padding: 30px;
+  background-color:#9dc775;
+}
+
+.colorProjects{
+  background-color:#9dc775;
+}
+
+.projects{
+  display:grid;
+  grid-template-columns:repeat(3,1fr)
+}
+
+.proj-card{
+  background-color: white;
+  box-shadow: black 5px 5px 5px , -1px -1px 2px;
+  width: 14rem; 
+  height: 25rem;
+  border-radius: 3px;
+  margin-bottom: 50px;
+  margin-left: 60px;
+}
+
+.project-image{
+  width: 288px;
+  height: 230px;
+}
+
+.project-title{
+  padding: 10px;
+}
+
+.project-text{
+  padding: 10px;
+  padding-bottom: 15px;
+}
+
+.project-btn1{
+  padding: 10px;
+  border-radius: 50px;
+  text-decoration: none;
+  color: #2c3e50;
+  background-color: #9bc07b;
+  margin-right: 15px;
+}
+
+.project-btn2{
+  padding: 10px;
+  border-radius: 50px;
+  text-decoration: none;
+  color: #2c3e50;
+  background-color: #9bc07b;
+  margin-left: 15px;
+}
 
 /* testimonials section */
 

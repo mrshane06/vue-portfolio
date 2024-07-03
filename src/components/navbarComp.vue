@@ -26,7 +26,7 @@
             <a href="#resume">Resume</a>
           </li>
           <li>
-            <a href="#">Projects</a>
+            <a href="#project">Projects</a>
           </li>
           <li>
             <a href="#">Testimonials</a>
