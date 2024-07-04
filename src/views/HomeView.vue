@@ -125,21 +125,59 @@
       <h1 class="testiHead"><em>Testimonials</em></h1>
       <hr>
       <div class="testimonials">
-        <section class="colorTestis" v-for="testimonials in testimonialsData()" :key="testimonials">
+        <section class="testi-card" v-for="testimonials in testimonialsData()" :key="testimonials">
           <testimonials-comp>
-            <template #testimonials>
-              <div class="testi-card" style="width: 18rem;">
-                <img :src='testimonials.person_img' class="testi-img">
-                <div class="card-body">
-                  <h4 class="testi-title">{{ testimonials.name }}</h4>
-                  <h6 class="testi-text">{{ testimonials.testimony }}</h6>
-                </div>
-              </div>
+            <template #person_img>
+              <img :src="testimonials.person_img" class="testi-img">
+            </template>
+            <template #name>
+              <h4 class="testi-title">{{ testimonials.name }}</h4>
+            </template>
+            <template #testimony>
+              <h6 class="testi-test">{{ testimonials.testimony }}</h6>
             </template>
           </testimonials-comp>
         </section>
       </div>
      </section>
+
+     <hr>
+
+     <section id="contacts">
+      <h1 id="contactHead"><em>Lets Get In Contact:</em></h1>
+      <div class="row">
+        <div id="contactLinks">
+          <p><img src="   https://cdn-icons-png.flaticon.com/512/484/484167.png " class="house"> Bonteheuwel , Cape Town</p>
+          <p><img src="   https://cdn-icons-png.flaticon.com/512/1151/1151429.png " class="phone">081 421 4195</p>
+        </div>
+        <div >
+          <img src="https://mrshane06.github.io/vue-portfolio-images/logos/Logo4.png" class="contactImg" >
+        </div>
+      </div>
+
+        <section id="bam">
+          <div class="col-lg-8 mt-5 mt-lg-0 mt-md-0 mt-sm-0">
+            <form
+             action="https://formspree.io/f/mgegqevb"
+             method="POST"></form>
+            <form method="post" role="form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="surname" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="comments" rows="5" placeholder="Comments" required></textarea>
+              </div>
+              <div class="text-center mt-4 send"><button id="sub" type="submit">Submit</button></div>
+            </form>
+          </div>
+        </section>
+     </section>
+     <br>
 </template>
 <script>
 import aboutComp from '@/components/aboutComp.vue'
@@ -364,7 +402,7 @@ hr{
   height: 25rem;
   border-radius: 3px;
   margin-bottom: 50px;
-  margin-left: 60px;
+  margin-left: 100px;
 }
 
 .project-image{
@@ -414,17 +452,17 @@ hr{
 .testi-card{
   background-color: white;
   box-shadow: black 5px 5px 5px , -1px -1px 2px;
-  width: 14rem; 
-  height: 32rem;
-  border-radius: 3px;
+  width: 20rem; 
+  height: 33rem;
   margin-bottom: 50px;
-  margin-left: 95px;
-  margin-top: 30px;
+  margin-left: 100px;
+  border:solid 2px black;
+  border-radius:10px;
 }
 
 .testi-img{
-  width: 260px;
-  height: 300px;
+  width: 280px;
+  height: 330px;
   padding-top: 20px;
 }
 
@@ -432,6 +470,55 @@ hr{
   padding: 10px;
 }
 
+.testi-test{
+  padding: 10px;
+  padding-bottom: 0px;
+}
+
 /* contacts section */
 
+#contactHead{
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+#contactLinks{
+  border: 2px solid black;
+  width: 250px;
+  padding: 10px;
+  margin: auto;
+}
+
+.house{
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+}
+
+.phone{
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+}
+
+#bam{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+#sub{
+    width: 60px;
+}
+
+@keyframes cont{
+  100% {transform: rotate(360deg);}
+}
+
+.contactImg{
+  width: 155px;
+  height: 140px;
+  animation: rotate 5s infinite ease;
+  place-items: center;
+}
 </style>

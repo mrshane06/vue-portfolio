@@ -1,6 +1,8 @@
 <template>
     <div>
-        <slot name="testimonials"></slot>
+        <slot name="person_img"></slot>
+        <slot name="name"></slot>
+        <slot name="testimony"></slot>
     </div>
 </template>
 <script>
