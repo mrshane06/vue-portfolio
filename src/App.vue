@@ -31,6 +31,7 @@ nav {
   width: 100%;
   background-color: #CEDECD;
   box-shadow: #9bc07b 7px 7px 7px;
+  height: 65px;
 }
 
 li {

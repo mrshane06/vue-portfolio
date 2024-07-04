@@ -120,6 +120,26 @@
       </section>
       </div>
      </section>
+
+     <section id="testimonials">
+      <h1 class="testiHead"><em>Testimonials</em></h1>
+      <hr>
+      <div class="testimonials">
+        <section class="colorTestis" v-for="testimonials in testimonialsData()" :key="testimonials">
+          <testimonials-comp>
+            <template #testimonials>
+              <div class="testi-card" style="width: 18rem;">
+                <img :src='testimonials.person_img' class="testi-img">
+                <div class="card-body">
+                  <h4 class="testi-title">{{ testimonials.name }}</h4>
+                  <h6 class="testi-text">{{ testimonials.testimony }}</h6>
+                </div>
+              </div>
+            </template>
+          </testimonials-comp>
+        </section>
+      </div>
+     </section>
 </template>
 <script>
 import aboutComp from '@/components/aboutComp.vue'
@@ -127,6 +147,7 @@ import navbarComp from "../components/navbarComp.vue"
 import educationComp from "../components/educationComp.vue"
 import skillsComp from "../components/skillsComp.vue"
 import projectsComp from "../components/projectsComp.vue"
+import testimonialsComp from "../components/testimonialsComp.vue"
 export default {
   components:{
     navbarComp,
@@ -134,6 +155,7 @@ export default {
     educationComp,
     skillsComp,
     projectsComp,
+    testimonialsComp
   },
   methods:{
         aboutData(){
@@ -147,6 +169,9 @@ export default {
         },
         projectsData(){
             return this.$store.state.projects
+        },
+        testimonialsData(){
+            return this.$store.state.testimonials
         },
     },
     computed:{
@@ -348,7 +373,8 @@ hr{
 }
 
 .project-title{
-  padding: 10px;
+  padding-top: 16px;
+  padding-bottom: 10px;
 }
 
 .project-text{
@@ -375,6 +401,36 @@ hr{
 }
 
 /* testimonials section */
+
+.testiHead{
+  padding: 30px;
+}
+
+.testimonials{
+  display:grid;
+  grid-template-columns:repeat(3,1fr)
+}
+
+.testi-card{
+  background-color: white;
+  box-shadow: black 5px 5px 5px , -1px -1px 2px;
+  width: 14rem; 
+  height: 32rem;
+  border-radius: 3px;
+  margin-bottom: 50px;
+  margin-left: 95px;
+  margin-top: 30px;
+}
+
+.testi-img{
+  width: 260px;
+  height: 300px;
+  padding-top: 20px;
+}
+
+.testi-title{
+  padding: 10px;
+}
 
 /* contacts section */
 
