@@ -104,17 +104,22 @@
       <h1 class="projectsHead"><em>My Projects</em></h1>
       <hr>
       <div class="projects">
-        <section class="colorProjects" v-for="projects in projectsData()" :key="projects">
+        <section id="proj-card" v-for="projects in projectsData()" :key="projects">
         <projects-comp>
-          <template #projects>
-            <div class="proj-card" style="width: 18rem;">
-              <img :src='projects.Pimage' class="project-image">
-              <div class="card-body">
-                <h4 class="project-title">{{ projects.Pname }}</h4>
-                <h6 class="project-text">{{ projects.description }}</h6>
-                <a :href="projects.github" class="project-btn1" target="_blank" >Github</a>   <a :href="projects.live" class="project-btn2" target="_blank" >Hosted</a>
-              </div>
-            </div>
+          <template #Pimage>
+            <img :src="projects.Pimage" class="project-image" >
+          </template>
+          <template #Pname>
+            <h4 class="project-title">{{ projects.Pname }}</h4>
+          </template>
+          <template #description>
+            <h6 class="project-text">{{ projects.description }}</h6>
+          </template>
+          <template #github>
+            <button class="project-btn1"><a :href="projects.github">Github</a></button>
+          </template>
+          <template #live>
+            <button class="project-btn2"><a :href="projects.live">Hosted</a></button>
           </template>
         </projects-comp>
       </section>
@@ -383,26 +388,22 @@ hr{
 
 .projectsHead{
   padding: 30px;
-  background-color:#9dc775;
-}
-
-.colorProjects{
-  background-color:#9dc775;
 }
 
 .projects{
   display:grid;
-  grid-template-columns:repeat(3,1fr)
+  grid-template-columns:repeat(3,1fr);
+  text-decoration: none;
 }
 
-.proj-card{
+#proj-card{
   background-color: white;
   box-shadow: black 5px 5px 5px , -1px -1px 2px;
-  width: 14rem; 
-  height: 25rem;
-  border-radius: 3px;
+  width: 18rem; 
+  height: 26rem;
   margin-bottom: 50px;
   margin-left: 100px;
+  border-radius: 10px;
 }
 
 .project-image{
@@ -423,7 +424,7 @@ hr{
 .project-btn1{
   padding: 10px;
   border-radius: 50px;
-  text-decoration: none;
+  text-decoration:none;
   color: #2c3e50;
   background-color: #9bc07b;
   margin-right: 15px;
