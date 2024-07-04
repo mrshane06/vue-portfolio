@@ -32,7 +32,7 @@
             <a href="#testimonials">Testimonials</a>
           </li>
           <li>
-            <a href="#">Contacts</a>
+            <a href="#contacts">Contacts</a>
           </li>
         </ul>
       </div>
