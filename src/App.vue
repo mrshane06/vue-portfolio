@@ -1,13 +1,29 @@
 <template>
+      <div>
+      <spinner-comp>
+        
+      </spinner-comp>
+    </div>
     <navbar-comp>
       <router-view></router-view>
     </navbar-comp>
+
+    <div>
+      <footer-comp>
+
+      </footer-comp>
+    </div>
 </template>
 
 <script>
 
+import footerComp from './components/footerComp.vue'
+import spinnerComp from './components/spinnerComp.vue'
 export default{
-
+  components:{
+    footerComp,
+    spinnerComp
+  }
 }
 </script>
 <style>
@@ -21,6 +37,7 @@ body{
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 /* navbar settings */

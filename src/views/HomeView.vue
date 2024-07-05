@@ -21,7 +21,7 @@
           <h2>and I am an Aspiring Fullstack Developer.</h2>
           <br>
           <br>
-          <button class="but1" > <a href="#about">Scroll Down For More ☻</a></button>
+          <button class="but1" > <a href="#about">Click Me For More ☻</a></button>
         </div>
         <br><br>
         <hr>
@@ -162,10 +162,7 @@
 
         <section id="bam">
           <div class="col-lg-8 mt-5 mt-lg-0 mt-md-0 mt-sm-0">
-            <form
-             action="https://formspree.io/f/mgegqevb"
-             method="POST"></form>
-            <form method="post" role="form">
+            <form action="https://formspree.io/f/mgegqevb" method="POST">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -198,7 +195,7 @@ export default {
     educationComp,
     skillsComp,
     projectsComp,
-    testimonialsComp
+    testimonialsComp,
   },
   methods:{
         aboutData(){
@@ -448,6 +445,13 @@ hr{
     place-content: center;
     margin-right: 10px;
   }
+  .card{
+    box-shadow: black 5px 5px 5px , -1px -1px 2px;
+    width: 14rem; 
+    border-radius: 30px;
+    margin-bottom: 50px;
+    margin-left: 40px;
+  }
 }
 @media only screen and (max-width:300px){
   .card{
@@ -534,7 +538,7 @@ hr{
   background-color: white;
   box-shadow: black 5px 5px 5px , -1px -1px 2px;
   width: 16rem; 
-  height: 25rem;
+  height: 26rem;
   margin-bottom: 50px;
   margin-left: 100px;
   border-radius: 10px;
