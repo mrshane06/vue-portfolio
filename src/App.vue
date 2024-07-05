@@ -31,7 +31,7 @@ nav {
   width: 100%;
   background-color: #CEDECD;
   box-shadow: #9bc07b 7px 7px 7px;
-  height: 65px;
+  /* height: 65px; */
 }
 
 li {
@@ -50,5 +50,17 @@ li a:hover{
   color: #42b983;
   padding: 5px;
   background-color: #d1d6d4;
+}
+
+@media only screen and (max-width:400px){
+  nav{
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width:300px){
+  nav{
+    width: 100%;
+  }
 }
 </style>
