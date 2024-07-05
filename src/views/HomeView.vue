@@ -116,10 +116,10 @@
             <h6 class="project-text">{{ projects.description }}</h6>
           </template>
           <template #github>
-            <button class="project-btn1"><a :href="projects.github">Github</a></button>
+            <button class="project-btn1"><a :href="projects.github" target="_blank">Github</a></button>
           </template>
           <template #live>
-            <button class="project-btn2"><a :href="projects.live">Hosted</a></button>
+            <button class="project-btn2"><a :href="projects.live" target="_blank">Hosted</a></button>
           </template>
         </projects-comp>
       </section>
@@ -232,6 +232,7 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* overflow: hidden; */
 }
 
 /* home section */
@@ -293,6 +294,19 @@ export default {
   margin-top:40px;
 }
 
+@media only screen and (max-width:400px){
+  #inverse{
+    display: none;
+  }
+  #Logo{
+  width: 300px;
+  height: 271px;
+  display: block;
+  margin: auto;
+  margin-top:0px;
+}
+}
+
 /* about section */
 .aboutHead{
   padding: 30px;
@@ -331,6 +345,43 @@ hr{
   margin-bottom:20px;
   height: 300px;
   width: 250px;
+}
+
+@media only screen and (max-width:400px){
+  .aboutText{
+  margin-top: 20px;
+  border: 2px solid black;
+  border-radius: 50px;
+  margin-left: 0px;
+  background-color: #2c3e50;
+  color: #b3cf99;
+  padding: 20px;
+  place-items: center;
+}
+#pic1{
+  margin-top:0px;
+  margin-bottom:20px;
+  height: 300px;
+  width: 250px;
+}
+}
+@media only screen and (max-width:300px){
+  .aboutText{
+  margin-top: 10px;
+  border: 2px solid black;
+  border-radius: 50px;
+  background-color: #2c3e50;
+  color: #b3cf99;
+  padding: 20px;
+  place-items: center;
+  font-size: small;
+}
+#pic1{
+  margin-top:0px;
+  margin-bottom:20px;
+  height: 300px;
+  width: 250px;
+}
 }
 /* resume section */
 
@@ -384,6 +435,31 @@ hr{
   margin-left: 60px;
 }
 
+@media only screen and (max-width:400px){
+  .skill{
+    display:grid;
+    grid-template-columns:repeat(1,1fr);
+    text-decoration: none;
+    place-content: center;
+  }
+  #pic3{
+    width: 200px;
+    height: 250px;
+    place-content: center;
+    margin-right: 10px;
+  }
+}
+@media only screen and (max-width:300px){
+  .card{
+    margin-left: 10px;
+  }
+  .skill-img{
+  width: 223px;
+  height: 140px;
+  border-radius: 30px;
+  }
+}
+
 /* projects section */
 
 .projectsHead{
@@ -424,19 +500,86 @@ hr{
 .project-btn1{
   padding: 10px;
   border-radius: 50px;
+  background-color: #ccd8c1;
+  margin-right: 15px;
+}
+
+.project-btn1 a{
   text-decoration:none;
   color: #2c3e50;
-  background-color: #9bc07b;
-  margin-right: 15px;
 }
 
 .project-btn2{
   padding: 10px;
   border-radius: 50px;
+  background-color: #ccd8c1;
+  margin-left: 15px;
+}
+
+.project-btn2 a{
   text-decoration: none;
   color: #2c3e50;
-  background-color: #9bc07b;
+}
+
+@media only screen and (max-width:400px){
+  .projects{
+    display:grid;
+    grid-template-columns:repeat(1,1fr);
+    text-decoration: none;
+    place-content: center;
+    margin-right: 100px;
+  }
+
+  #proj-card{
+  background-color: white;
+  box-shadow: black 5px 5px 5px , -1px -1px 2px;
+  width: 16rem; 
+  height: 25rem;
+  margin-bottom: 50px;
+  margin-left: 100px;
+  border-radius: 10px;
+}
+
+.project-image{
+  width: 240px;
+  height: 200px;
+  padding-top: 10px;
+}
+
+.project-title{
+  padding-top: 16px;
+  padding-bottom: 10px;
+}
+
+.project-text{
+  padding: 10px;
+  padding-bottom: 15px;
+}
+
+.project-btn1{
+  padding: 10px;
+  border-radius: 50px;
+  background-color: #ccd8c1;
+  margin-right: 15px;
+}
+
+.project-btn1 a{
+  text-decoration:none;
+  color: #2c3e50;
+}
+
+.project-btn2{
+  padding: 10px;
+  border-radius: 50px;
+  background-color: #ccd8c1;
   margin-left: 15px;
+}
+
+.project-btn2 a{
+  text-decoration: none;
+  color: #2c3e50;
+}
+
 }
 
 /* testimonials section */
@@ -474,6 +617,65 @@ hr{
 .testi-test{
   padding: 10px;
   padding-bottom: 0px;
+}
+
+@media only screen and (max-width:400px){
+  .testimonials{
+    display:grid;
+    grid-template-columns:repeat(1,1fr);
+    text-decoration: none;
+    place-content: center;
+    margin-right: 100px;
+  }
+  .testi-card{
+  background-color: white;
+  box-shadow: black 5px 5px 5px , -1px -1px 2px;
+  width: 18rem; 
+  height: 32rem;
+  margin-bottom: 50px;
+  margin-left: 100px;
+  border:solid 2px black;
+  border-radius:10px;
+  }
+  .testi-img{
+  width: 240px;
+  height: 330px;
+  padding-top: 20px;
+  }
+  .testi-test{
+  padding: 10px;
+  padding-bottom: 0px;
+  font-size: small;
+  }
+}
+
+@media only screen and (max-width:300px){
+  .testimonials{
+    display:grid;
+    grid-template-columns:repeat(1,1fr);
+    text-decoration: none;
+    place-content: center;
+  }
+  .testi-card{
+  background-color: white;
+  box-shadow: black 5px 5px 5px , -1px -1px 2px;
+  width: 16rem; 
+  height: 32rem;
+  margin-bottom: 50px;
+  margin-left: 100px;
+  border:solid 2px black;
+  border-radius:10px;
+  }
+  .testi-img{
+  width: 240px;
+  height: 330px;
+  padding-top: 20px;
+  }
+  .testi-test{
+  padding: 10px;
+  padding-bottom: 0px;
+  font-size: small;
+  }
 }
 
 /* contacts section */
