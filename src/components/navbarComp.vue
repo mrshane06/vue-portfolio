@@ -1,13 +1,4 @@
 <template>
-    <!-- <nav>
-        <a href="/">Home</a> |
-        <a href="/">About</a> |
-        <a href="/">Resume</a> |
-        <a href="/">Portfolio</a> |
-        <a href="/">Testimonials</a> |
-        <a href="/">Contacts</a> 
-    </nav> -->
-
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href=""></a>
